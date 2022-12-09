@@ -1,0 +1,42 @@
+{
+  "name": "@bsoul/games",
+  "version": "1.0.0",
+  "description": "",
+  "author": "viandwi24",
+  "license": "ISC",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "prepack": "pnpm build",
+    "build": "rollup -c --bundleConfigAsCjs",
+    "dev": "rollup -cw --bundleConfigAsCjs",
+    "watch": "rollup -cw --bundleConfigAsCjs"
+  },
+  "peerDependencies": {
+    "phaser": "^3.60.0-beta.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/lodash.merge": "^4.6.7",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "node-sass": "^8.0.0",
+    "postcss": "^8.4.19",
+    "rollup": "^3.5.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "lodash.merge": "^4.6.2",
+    "phaser": "3.60.0-beta.10"
+  }
+}
