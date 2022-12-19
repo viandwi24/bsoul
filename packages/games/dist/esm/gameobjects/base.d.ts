@@ -5,7 +5,8 @@ export declare enum GameObjectType {
     Key = "Key",
     Sprite = "Sprite",
     Player = "Player",
-    Enemy = "Enemy"
+    Enemy = "Enemy",
+    Trap = "Trap"
 }
 export declare class GameObjectBase extends Phaser.Physics.Arcade.Sprite {
     gameObjectType: GameObjectType;

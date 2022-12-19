@@ -3,6 +3,7 @@ import merge from 'lodash.merge'
 import { DemoScene } from './scenes/demo-scene'
 import { TestScene } from './scenes/test.scene'
 import { LevelSelectorScene } from './scenes/level-selector'
+import { HudScene } from './scenes/hud.scene'
 
 declare module 'phaser' {
   interface Game {
@@ -28,13 +29,14 @@ export const gameClientDefaultConfig: GameClientOptions = {
       default: 'arcade',
       arcade: {
         gravity: { y: 0 },
-        debug: true
+        debug: false
       }
     },
     scene: [
       LevelSelectorScene,
       DemoScene,
-      TestScene
+      TestScene,
+      HudScene,
     ]
   }
 }

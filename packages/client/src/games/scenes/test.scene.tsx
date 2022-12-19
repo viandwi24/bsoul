@@ -63,6 +63,9 @@ export class TestScene extends Phaser.Scene {
   }
 
   preload() {
+    // create hud
+    this.scene.launch('HudScene', { mainScene: this })
+
     // load assets
 
     // load chars
@@ -106,15 +109,6 @@ export class TestScene extends Phaser.Scene {
     // camera
     this.cameras.main.startFollow(this.player)
     this.cameras.main.setZoom(6)
-
-    // objects
-    // const obj = this.add.sprite(100, 100, 'item_dungeon_chest_16')
-    // obj.setDepth(99999)
-    // obj.anims.create({
-    //   key: 'open',
-    //   frames: [0, 1, 2].map((i) => ({ key: 'item_dungeon_chest_16', frame: i })),
-    // })
-    // obj.anims.play('open', true)
 
     // test create text in center of screen
     const text = this.add.text(0, 0, 'Hello Phaser!', {

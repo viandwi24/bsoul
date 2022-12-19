@@ -2116,6 +2116,7 @@ var GameObjectType;
     GameObjectType["Sprite"] = "Sprite";
     GameObjectType["Player"] = "Player";
     GameObjectType["Enemy"] = "Enemy";
+    GameObjectType["Trap"] = "Trap";
 })(GameObjectType || (GameObjectType = {}));
 // Phaser.Physics.Arcade.Sprite
 var GameObjectBase = /** @class */ (function (_super) {

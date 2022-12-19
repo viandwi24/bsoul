@@ -313,7 +313,6 @@ export class Player extends GameObjectBase {
       .filter(g => g.gameObjectType === GameObjectType.Trap) as Trap[])
       .filter(g => g.state === 'closed')
       .filter(g => (g.x >= this.x - (tileSize.width / 2) && g.x <= this.x + (tileSize.width / 2)) && (g.y >= this.y - (tileSize.height / 2) && g.y <= this.y + (tileSize.height / 2))) as Trap[]
-    console.log('trap', closedDoors)
     if (closedDoors.length > 0) {
       this.makeGameover()
     }
