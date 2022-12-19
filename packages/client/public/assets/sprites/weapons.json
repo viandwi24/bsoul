@@ -1,0 +1,839 @@
+{
+	"textures": [
+		{
+			"image": "weapons.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 256,
+				"h": 1294
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "AxeDoubleT2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 100,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 100,
+						"h": 114
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 100,
+						"h": 114
+					}
+				},
+				{
+					"filename": "SwordT2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 106,
+						"h": 101
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 106,
+						"h": 101
+					},
+					"frame": {
+						"x": 103,
+						"y": 1,
+						"w": 106,
+						"h": 101
+					}
+				},
+				{
+					"filename": "Spear.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 104,
+						"h": 119
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 8,
+						"w": 96,
+						"h": 111
+					},
+					"frame": {
+						"x": 103,
+						"y": 104,
+						"w": 96,
+						"h": 111
+					}
+				},
+				{
+					"filename": "HeartHalf.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 60,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 0,
+						"w": 49,
+						"h": 59
+					},
+					"frame": {
+						"x": 201,
+						"y": 104,
+						"w": 49,
+						"h": 59
+					}
+				},
+				{
+					"filename": "AxeSingle.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 5,
+						"w": 94,
+						"h": 112
+					},
+					"frame": {
+						"x": 1,
+						"y": 117,
+						"w": 94,
+						"h": 112
+					}
+				},
+				{
+					"filename": "Sword.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 108,
+						"h": 106
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 102,
+						"h": 103
+					},
+					"frame": {
+						"x": 97,
+						"y": 217,
+						"w": 102,
+						"h": 103
+					}
+				},
+				{
+					"filename": "AxeSingleT2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 90,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 89,
+						"h": 107
+					},
+					"frame": {
+						"x": 1,
+						"y": 231,
+						"w": 89,
+						"h": 107
+					}
+				},
+				{
+					"filename": "Wrench.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 106
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 99,
+						"h": 106
+					},
+					"frame": {
+						"x": 92,
+						"y": 322,
+						"w": 99,
+						"h": 106
+					}
+				},
+				{
+					"filename": "Bow.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 62,
+						"h": 99
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 62,
+						"h": 99
+					},
+					"frame": {
+						"x": 193,
+						"y": 322,
+						"w": 62,
+						"h": 99
+					}
+				},
+				{
+					"filename": "HeatFull.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 62,
+						"h": 63
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 62,
+						"h": 63
+					},
+					"frame": {
+						"x": 193,
+						"y": 423,
+						"w": 62,
+						"h": 63
+					}
+				},
+				{
+					"filename": "BowLoaded.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 100,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 88,
+						"h": 100
+					},
+					"frame": {
+						"x": 1,
+						"y": 340,
+						"w": 88,
+						"h": 100
+					}
+				},
+				{
+					"filename": "SpearT2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 95,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 95,
+						"h": 110
+					},
+					"frame": {
+						"x": 91,
+						"y": 430,
+						"w": 95,
+						"h": 110
+					}
+				},
+				{
+					"filename": "X.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 76,
+						"h": 79
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 6,
+						"w": 64,
+						"h": 68
+					},
+					"frame": {
+						"x": 188,
+						"y": 488,
+						"w": 64,
+						"h": 68
+					}
+				},
+				{
+					"filename": "Tome.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 97,
+						"h": 97
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1,
+						"w": 79,
+						"h": 96
+					},
+					"frame": {
+						"x": 1,
+						"y": 442,
+						"w": 79,
+						"h": 96
+					}
+				},
+				{
+					"filename": "HammerTool.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 95,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 7,
+						"w": 87,
+						"h": 87
+					},
+					"frame": {
+						"x": 1,
+						"y": 540,
+						"w": 87,
+						"h": 87
+					}
+				},
+				{
+					"filename": "Wand.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 95,
+						"h": 109
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 94,
+						"h": 94
+					},
+					"frame": {
+						"x": 90,
+						"y": 542,
+						"w": 94,
+						"h": 94
+					}
+				},
+				{
+					"filename": "Helmet.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 75,
+						"h": 75
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 69,
+						"h": 72
+					},
+					"frame": {
+						"x": 186,
+						"y": 558,
+						"w": 69,
+						"h": 72
+					}
+				},
+				{
+					"filename": "Dagger.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 67,
+						"h": 70
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 66,
+						"h": 63
+					},
+					"frame": {
+						"x": 186,
+						"y": 632,
+						"w": 66,
+						"h": 63
+					}
+				},
+				{
+					"filename": "TomeBlue.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 90,
+						"h": 94
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 80,
+						"h": 94
+					},
+					"frame": {
+						"x": 1,
+						"y": 629,
+						"w": 80,
+						"h": 94
+					}
+				},
+				{
+					"filename": "Tools.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 97,
+						"h": 104
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 97,
+						"h": 104
+					},
+					"frame": {
+						"x": 83,
+						"y": 638,
+						"w": 97,
+						"h": 104
+					}
+				},
+				{
+					"filename": "Map.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 89,
+						"h": 89
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 0,
+						"w": 73,
+						"h": 89
+					},
+					"frame": {
+						"x": 182,
+						"y": 697,
+						"w": 73,
+						"h": 89
+					}
+				},
+				{
+					"filename": "TomeGold.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 90,
+						"h": 94
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 80,
+						"h": 94
+					},
+					"frame": {
+						"x": 1,
+						"y": 725,
+						"w": 80,
+						"h": 94
+					}
+				},
+				{
+					"filename": "Hammer.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 98,
+						"h": 98
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 97,
+						"h": 93
+					},
+					"frame": {
+						"x": 83,
+						"y": 744,
+						"w": 97,
+						"h": 93
+					}
+				},
+				{
+					"filename": "DocumentEmpty.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 72,
+						"h": 88
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 71,
+						"h": 88
+					},
+					"frame": {
+						"x": 182,
+						"y": 788,
+						"w": 71,
+						"h": 88
+					}
+				},
+				{
+					"filename": "TomeGreen.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 90,
+						"h": 94
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 80,
+						"h": 94
+					},
+					"frame": {
+						"x": 1,
+						"y": 821,
+						"w": 80,
+						"h": 94
+					}
+				},
+				{
+					"filename": "PlateArmor.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 92
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 92,
+						"h": 89
+					},
+					"frame": {
+						"x": 83,
+						"y": 839,
+						"w": 92,
+						"h": 89
+					}
+				},
+				{
+					"filename": "HeartWithContainer.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 83,
+						"h": 83
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 3,
+						"w": 79,
+						"h": 78
+					},
+					"frame": {
+						"x": 1,
+						"y": 917,
+						"w": 79,
+						"h": 78
+					}
+				},
+				{
+					"filename": "ShieldWood.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 86,
+						"h": 86
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 4,
+						"w": 76,
+						"h": 80
+					},
+					"frame": {
+						"x": 177,
+						"y": 878,
+						"w": 76,
+						"h": 80
+					}
+				},
+				{
+					"filename": "BackpackOpen.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 89,
+						"h": 83
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 89,
+						"h": 83
+					},
+					"frame": {
+						"x": 82,
+						"y": 930,
+						"w": 89,
+						"h": 83
+					}
+				},
+				{
+					"filename": "SwordWood.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 80,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 77,
+						"h": 76
+					},
+					"frame": {
+						"x": 1,
+						"y": 997,
+						"w": 77,
+						"h": 76
+					}
+				},
+				{
+					"filename": "Shield.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 84,
+						"h": 91
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 82,
+						"h": 85
+					},
+					"frame": {
+						"x": 173,
+						"y": 960,
+						"w": 82,
+						"h": 85
+					}
+				},
+				{
+					"filename": "Backpack1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 85,
+						"h": 83
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 85,
+						"h": 83
+					},
+					"frame": {
+						"x": 80,
+						"y": 1015,
+						"w": 85,
+						"h": 83
+					}
+				},
+				{
+					"filename": "HeartContainer.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 77,
+						"h": 75
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 77,
+						"h": 75
+					},
+					"frame": {
+						"x": 1,
+						"y": 1075,
+						"w": 77,
+						"h": 75
+					}
+				},
+				{
+					"filename": "ShieldT2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 81,
+						"h": 83
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 81,
+						"h": 83
+					},
+					"frame": {
+						"x": 167,
+						"y": 1047,
+						"w": 81,
+						"h": 83
+					}
+				},
+				{
+					"filename": "Envelope.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 87,
+						"h": 87
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 84,
+						"h": 79
+					},
+					"frame": {
+						"x": 80,
+						"y": 1100,
+						"w": 84,
+						"h": 79
+					}
+				},
+				{
+					"filename": "Scroll.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 78,
+						"h": 78
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 10,
+						"w": 62,
+						"h": 61
+					},
+					"frame": {
+						"x": 1,
+						"y": 1152,
+						"w": 62,
+						"h": 61
+					}
+				},
+				{
+					"filename": "Arrow.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 80,
+						"h": 66
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 80,
+						"h": 66
+					},
+					"frame": {
+						"x": 166,
+						"y": 1132,
+						"w": 80,
+						"h": 66
+					}
+				},
+				{
+					"filename": "Coin.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 71,
+						"h": 71
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 12,
+						"w": 63,
+						"h": 55
+					},
+					"frame": {
+						"x": 65,
+						"y": 1181,
+						"w": 63,
+						"h": 55
+					}
+				},
+				{
+					"filename": "AxeDouble.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 110,
+						"h": 103
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 6,
+						"w": 103,
+						"h": 93
+					},
+					"frame": {
+						"x": 130,
+						"y": 1200,
+						"w": 103,
+						"h": 93
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:2ddf9f94d7b6c0d73b01ee1e2653ce54:6806098a27541170fc27a1426fc97a12:ba48453f8b2235fdb166a51105f49255$"
+	}
+}

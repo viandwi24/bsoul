@@ -29,6 +29,7 @@ export function useCreateGame({ canvas }: UseCreateGameProps) {
         }
       }
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     game = g
     return () => {
       game.destroy()

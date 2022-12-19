@@ -11,13 +11,16 @@ export function LevelSelectorUI({ scene }: { scene: Phaser.Scene }) {
   }, [])
 
   const startLevel = (levelScene: string) => {
-    console.log('startLevel', levelScene)
     scene.game.gameClient.stopAllScenes()
     scene.scene.launch('TestScene', { mapUrl: scene.game.gameClient.assetUrl(`maps/levels/${levelScene}.json?${Math.random()}`) })
   }
 
+  useEffect(() => {
+    setTimeout(() => startLevel('1-1'), 500)
+  }, [])
+
   return (
-    <div className="fixed top-0 left-0 z-30 flex w-screen h-screen bg-slate-900">
+    <div className="fixed top-0 left-0 z-30 flex w-screen h-screen bg-slate-900 text-gray-100">
       <div className="relative flex-1 flex flex-col py-10 px-10 max-w-screen-lg mx-auto space-y-10">
         <div className="font-bold text-3xl text-center">Select Level</div>
         <div className="flex-1">

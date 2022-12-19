@@ -14,6 +14,7 @@ export function PreloadSceneUI({ scene }: { scene: DemoScene }) {
     return () => {
       clearInterval(anim)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

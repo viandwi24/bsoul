@@ -17,24 +17,24 @@ export class GameObjectBase extends Phaser.Physics.Arcade.Sprite {
   enableDepthSort = true
   indicatorNameTxt!: Phaser.GameObjects.Text
 
-  constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: string | number) {
-    super(scene, x, y, texture, frame)
-    // console.log('gameobjectbase', x, y, texture, frame)
+  // constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: string | number) {
+  //   super(scene, x, y, texture, frame)
+  //   // console.log('gameobjectbase', x, y, texture, frame)
 
-    // indicator name
-    // const indicatorNameTxt = this.scene.add.text(0, 0, this.gameObjectType, {
-    //   fontSize: '12px',
-    //   color: '#ffffff',
-    // })
-    // indicatorNameTxt.setOrigin(0.5, 0.5)
-    // indicatorNameTxt.setDepth(9999)
-    // this.indicatorNameTxt = indicatorNameTxt
+  //   // indicator name
+  //   // const indicatorNameTxt = this.scene.add.text(0, 0, this.gameObjectType, {
+  //   //   fontSize: '12px',
+  //   //   color: '#ffffff',
+  //   // })
+  //   // indicatorNameTxt.setOrigin(0.5, 0.5)
+  //   // indicatorNameTxt.setDepth(9999)
+  //   // this.indicatorNameTxt = indicatorNameTxt
 
-    // events
-    // scene.events.on(Phaser.Scenes.Events.POST_UPDATE, this.update.bind(this))
-    // scene.events.on(Phaser.Scenes.Events.SHUTDOWN, this.destroy.bind(this))
-    // this.scene.events.off(Phaser.Scenes.Events.POST_UPDATE, this.update.bind(this))
-  }
+  //   // events
+  //   // scene.events.on(Phaser.Scenes.Events.POST_UPDATE, this.update.bind(this))
+  //   // scene.events.on(Phaser.Scenes.Events.SHUTDOWN, this.destroy.bind(this))
+  //   // this.scene.events.off(Phaser.Scenes.Events.POST_UPDATE, this.update.bind(this))
+  // }
 
   setObjectData(data: any, map: Tilemap) {
     this.map = map

@@ -70,7 +70,7 @@ function processTile(this: Phaser.Scene, tile: Phaser.Tilemaps.Tile) {
   //   console.log('tile', tile)
   //   tile.setAlpha(0.5)
   // }
-  return tile
+  // return tile
 }
 
 

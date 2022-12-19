@@ -16,6 +16,8 @@ export class Player extends GameObjectBase {
   keyCollected = 0
   keyTotal = 0
   outDoorIsOpen = false
+  currentWeapon: 'sword' = 'sword'
+  weaponSprite?: Phaser.GameObjects.Sprite
 
   constructor(scene: Phaser.Scene, public map: Tilemap) {
     // const texture = 'char'
@@ -81,6 +83,17 @@ export class Player extends GameObjectBase {
 
     // get key total
     this.keyTotal = map.gameobjects.filter(g => g.gameObjectType === GameObjectType.Key).length
+
+    // laod weapons
+    this.loadWeapon()
+  }
+
+  loadWeapon() {
+    const weapon = this.scene.add.sprite(this.x, this.y, 'weapons', 'Sword.png')
+    weapon.setOrigin(0)
+    weapon.setDepth(this.depth)
+    weapon.setDisplaySize(8, 8)
+    this.weaponSprite = weapon
   }
 
   preUpdate() {
@@ -120,8 +133,31 @@ export class Player extends GameObjectBase {
   }
 
   syncAllChild() {
+    // axis
+    const { axis } = this
+
+    // body sprite
     this.playerSprite.setPosition(this.x - this.playerSprite.displayWidth / 2, this.y - this.playerSprite.displayHeight + this.playerSprite.displayHeight / 10)
     this.playerSprite.setDepth(this.depth)
+    this.playerSpriteDirection = axis.x === 0 ? this.playerSpriteDirection : axis.x === 1 ? 'right' : 'left'
+    this.playerSprite.setFlipX(this.playerSpriteDirection === 'left')
+
+    // apply direction weapon
+    if (this.weaponSprite) {
+      this.weaponSprite.setDepth(this.depth)
+      this.weaponSprite.setFlipX(this.playerSpriteDirection !== 'left')
+      if (this.playerSpriteDirection === 'right') {
+        this.weaponSprite.setPosition(
+          this.x - this.weaponSprite.displayWidth / 2 + this.weaponSprite.displayWidth / 1.8,
+          this.y - this.weaponSprite.displayHeight,
+        )
+      } else {
+        this.weaponSprite.setPosition(
+          this.x - this.weaponSprite.displayWidth / 2 - this.weaponSprite.displayWidth / 1.8,
+          this.y - this.weaponSprite.displayHeight,
+        )
+      }
+    }
   }
 
   createController() {
@@ -202,10 +238,6 @@ export class Player extends GameObjectBase {
       this.setVelocityX(axis.x * normalSpeed)
       this.setVelocityY(axis.y * normalSpeed)
     }
-
-    // apply direction transform
-    this.playerSpriteDirection = axis.x === 0 ? this.playerSpriteDirection : axis.x === 1 ? 'right' : 'left'
-    this.playerSprite.setFlipX(this.playerSpriteDirection === 'left')
   }
 
   private interactionUpdate() {

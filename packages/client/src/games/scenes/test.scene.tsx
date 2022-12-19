@@ -16,6 +16,7 @@ export function PreloadSceneUI({ scene }: { scene: TestScene }) {
     return () => {
       clearInterval(anim)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const lvlselector = () => {
@@ -90,6 +91,13 @@ export class TestScene extends Phaser.Scene {
       'particles',
       this.game.gameClient.assetUrl('particles/particles.png'),
       this.game.gameClient.assetUrl('particles/particles.json')
+    )
+
+    // load weapons
+    this.load.atlas(
+      'weapons',
+      this.game.gameClient.assetUrl('sprites/weapons.png'),
+      this.game.gameClient.assetUrl('sprites/weapons.json')
     )
 
     // preload and init map
