@@ -15,9 +15,9 @@ export function LevelSelectorUI({ scene }: { scene: Phaser.Scene }) {
     scene.scene.launch('TestScene', { mapUrl: scene.game.gameClient.assetUrl(`maps/levels/${levelScene}.json?${Math.random()}`) })
   }
 
-  useEffect(() => {
-    setTimeout(() => startLevel('1-1'), 500)
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => startLevel('1-1'), 500)
+  // }, [])
 
   return (
     <div className="fixed top-0 left-0 z-30 flex w-screen h-screen bg-slate-900 text-gray-100">
