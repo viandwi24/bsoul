@@ -7,6 +7,7 @@ export enum GameObjectType {
   Sprite = 'Sprite',
   Player = 'Player',
   Enemy = 'Enemy',
+  Trap = 'Trap',
 }
 
 // Phaser.Physics.Arcade.Sprite

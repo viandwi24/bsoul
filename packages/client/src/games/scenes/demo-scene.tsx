@@ -30,16 +30,6 @@ export function PreloadSceneUI({ scene }: { scene: DemoScene }) {
       }}
     >
       <div>BSOUL v0.0.1 (Demo vers. {signature}) <button onClick={() => scene.game.gameClient.restart()}>Restart</button></div>
-      {/* <div>
-        <div style={{ fontWeight: 700 }}>GAMEOBJECTS</div>
-        <div style={{ fontSize: '14px' }}>
-          {phaserobjects.map((phaserobject) => (
-            <div key={Math.random()}>
-              {phaserobject.name} ({phaserobject.type})
-            </div>
-          ))}
-        </div>
-      </div> */}
     </div>
   )
 }

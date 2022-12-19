@@ -319,9 +319,11 @@ export class Tilemap {
     // resort with depth
     this.sortDepthLayers()
     const centerDepth = this.getLayerByName('LAYER_PLAYER')?.depth || 0
-    const sorted = this.gameobjects.sort((a, b) => {
-      return a.calculateSortDepthPoint().y - b.calculateSortDepthPoint().y
-    })
+    const sorted = this.gameobjects
+      // .filter(o => o.enableDepthSort)
+      .sort((a, b) => {
+        return a.calculateSortDepthPoint().y - b.calculateSortDepthPoint().y
+      })
     // set depth
     for (let i = 0; i < sorted.length; i++) {
       const obj = sorted[i]

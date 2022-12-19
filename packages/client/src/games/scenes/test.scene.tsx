@@ -40,16 +40,6 @@ export function PreloadSceneUI({ scene }: { scene: TestScene }) {
         <button onClick={() => scene.game.gameClient.restart()}>Restart</button> |
         <button onClick={() => lvlselector()}>Level Selector</button>
       </div>
-      <div>
-        <div style={{ fontWeight: 700 }}>GAMEOBJECTS</div>
-        <div style={{ fontSize: '14px' }}>
-          {phaserobjects.map((phaserobject) => (
-            <div key={Math.random()}>
-              {phaserobject.name} ({phaserobject.type})
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { Chest } from './chest'
 import { Door } from './door'
 import { Enemy } from './enemy'
 import { Key } from './key'
+import { Trap } from './trap'
 
 export * from './base'
 export * from './chest'
@@ -17,4 +18,5 @@ export const GameObjectClassContructor: {
   'Chest': Chest,
   'Key': Key,
   'Enemy': Enemy,
+  'Trap': Trap
 }

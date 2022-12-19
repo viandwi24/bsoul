@@ -58,7 +58,7 @@ export class Chest extends GameObjectBase {
       })
       collectedFxSprite.on('animationcomplete', () => {
         collectedFxSprite.destroy(true)
-        this.destroy(true)
+        // this.destroy(true)
       })
       collectedFxSprite.play('collected')
 

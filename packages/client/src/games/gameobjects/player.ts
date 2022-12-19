@@ -4,6 +4,7 @@ import { GameObjectBase, GameObjectType } from "./base"
 import { Chest } from './chest';
 import { Door } from './door';
 import { Key } from './key';
+import { Trap } from './trap';
 
 export class Player extends GameObjectBase {
   playerSprite: Phaser.GameObjects.Sprite
@@ -305,5 +306,21 @@ export class Player extends GameObjectBase {
         }
       }
     }
+
+    // interact::trap::check
+    // get trap closed
+    const closedDoors = (this.map.gameobjects
+      .filter(g => g.gameObjectType === GameObjectType.Trap) as Trap[])
+      .filter(g => g.state === 'closed')
+      .filter(g => (g.x >= this.x - (tileSize.width / 2) && g.x <= this.x + (tileSize.width / 2)) && (g.y >= this.y - (tileSize.height / 2) && g.y <= this.y + (tileSize.height / 2))) as Trap[]
+    console.log('trap', closedDoors)
+    if (closedDoors.length > 0) {
+      this.makeGameover()
+    }
+  }
+
+  makeGameover() {
+    this.scene.game.gameClient.stopAllScenes()
+    this.scene.scene.launch(this.scene)
   }
 }
