@@ -149,131 +149,128 @@ export class Tilemap {
 
       // const group = this.scene.physics.add.staticGroup({ classType: Door })
       for (const object_data of layer.objects) {
-        let bestT: Phaser.Tilemaps.Tileset | undefined
-        map.tilesets.forEach(t => {
-          if (t.firstgid <= (object_data.gid || 0)) {
-            bestT = t
-          }
-        })
-        const tilesData = this.data.tilesets.find((t: any) => t.name === bestT?.name)?.tiles || []
-        const id = (object_data.gid || 0) - (bestT?.firstgid || 0)
-        const tileData = tilesData.find((t: any) => t.id === id)
-        // let objectData: any
-        const originalLayer = (this.data.layers.find((l: any) => l.name === layer.name) || {})
-        const originalObj = (originalLayer?.objects || []).find((o: any) => o.id === object_data.id && o.name === object_data.name)
-        if ((bestT && typeof bestT !== 'undefined') || object_data) {
-          try {
-            // console.log(this.data.tilesets)
-            // objectData = bestT.tileData[(object_data.gid || 0) - bestT.firstgid]
-            // objectData = [this.data.tilesets || []]
-            //   .find(t => t.name === bestT.name)?.tiles
-            // console.log(bestT, tilesData, tileData)
-            // console.log(objectData, object_data)
-
-            if (tileData || originalObj) {
-              const objClass = tileData?.class || originalObj?.class || ''
-              console.log('tiledata', tileData)
-              if (objClass) {
-                console.log('[Tilemap] [create] [object_layer] [object]', object_data.name, objClass, object_data)
-                const getObjClassConstructor = () => GameObjectClassContructor[objClass]
-                const tileset = this.getTilesetFromGid(object_data.gid!)!
-                const actualX = object_data.x! + object_data.width! * 0.5
-                const actualY = object_data.y! - object_data.height! * 0.5
-                const obj = new (getObjClassConstructor())(this.scene, actualX, actualY, tileset.name, object_data.gid! - this.map.getTileset(tileset.name)!.firstgid) as GameObjectBase
-                // const tD = {...tileData}
-                obj.setName(object_data.name)
-                obj.setDepth(0)
-                obj.setInteractive()
-                const newData = {
-                  properties: []
-                } as any
-                if ((tileData?.properties || originalObj?.properties || []).length > 0) {
-                  try {
-                    newData.properties = [...(tileData?.properties && originalObj?.properties).map((m: any) => ({name: m.name, value: m.value, type: m.type}))]
-                  } catch (error) {
-                  }
-                  // console.log('Ada properties default', objClass, tileData)
-                  if (object_data.properties) {
-                    // console.log('Ada properties custom', objClass, object_data)
-                    object_data.properties.forEach((p: any) => {
-                      try {
-                        const findIndex = newData.properties.findIndex((m: any) => m.name === p.name && m.type === p.type)
-                        if (findIndex >= 0) {
-                          newData.properties[findIndex].value = p.value
-                        } else {
-                          newData.properties.push({name: p.name, value: p.value, type: p.type})
-                        }
-                      } catch (error) {
-                        console.error(`ada p error ${error}`, error)
-                      }
-                    })
-                  }
-                  if (objClass === 'Enemy') console.log('Enemy nyar', newData, object_data.properties)
-                  // console.log('ada properties akhir', objClass, newData)
-                  obj.setObjectData(newData, this)
-                } else {
-                  obj.setObjectData({...newData}, this)
-                }
-                // if (objClass === 'Door') console.log('Door', tD, object_data)
-                // if (tD.properties && tD.properties.length > 0 && object_data.properties && object_data.properties?.length > 0) {
-                //   const newTd = {...tD}
-                //   object_data.properties?.forEach((p: any) => {
-                //     const f = newTd.properties.find((fp: any) => fp.name === p.name)
-                //     if (f) {
-                //       f.value = p.value
-                //     } else {
-                //       newTd.properties.push(p)
-                //     }
-                //   })
-                //   obj.setObjectData({...newTd}, this)
-                //   console.log('door ada', tD, object_data)
-                // } else {
-                //   obj.setObjectData({...tD}, this)
-                // }
-                this.scene.add.existing(obj)
-                this.gameobjects.push(obj)
-                // if (tD.properties && tD.properties.length > 0) {
-                //   object_data.properties?.forEach((p: any) => {
-                //     const f = tD.properties.find((fp: any) => fp.name === p.name)
-                //     if (f) {
-                //       f.value = p.value
-                //     } else {
-                //       tD.properties.push(p)
-                //     }
-                //   })
-                // }
-
-
-
-                // const findObjGroup = this.gameobjects_groups.find(g => g.name === objClass)
-                // if (findObjGroup) {
-                //   const obj = this.addObjectFromTiled(
-                //     findObjGroup,
-                //     object_data,
-                //     object_data.name,
-                //     {...tileData},
-                //   )
-                //   if (obj) this.gameobjects.push(obj)
-                // } else {
-                //   const classMappingConstructor = {
-                //     'Door': Door,
-                //     'Chest': Chest
-                //   }
-                //   const getObjClassConstructor = () => classMappingConstructor[objClass]
-                //   const group = this.scene.physics.add.staticGroup({ classType: getObjClassConstructor(), name: objClass })
-                //   this.gameobjects_groups.push(group)
-                //   const obj = this.addObjectFromTiled(
-                //     group,
-                //     object_data,
-                //     object_data.name,
-                //     {...tileData},
-                //   )
-                //   if (obj) this.gameobjects.push(obj)
-                // }
-              }
+        try {
+          let bestT: Phaser.Tilemaps.Tileset | undefined
+          map.tilesets.forEach(t => {
+            if (t.firstgid <= (object_data.gid || 0)) {
+              bestT = t
             }
+          })
+          const tilesData = this.data.tilesets.find((t: any) => t.name === bestT?.name)?.tiles || []
+          const id = (object_data.gid || 0) - (bestT?.firstgid || 0)
+          const tileData = tilesData.find((t: any) => t.id === id)
+          // let objectData: any
+          const originalLayer = (this.data.layers.find((l: any) => l.name === layer.name) || {})
+          const originalObj = (originalLayer?.objects || []).find((o: any) => o.id === object_data.id && o.name === object_data.name)
+          if ((bestT && typeof bestT !== 'undefined') || object_data) {
+            try {
+              if (tileData || originalObj) {
+                const objClass = tileData?.class || originalObj?.class || ''
+                if (objClass) {
+                  const getObjClassConstructor = () => GameObjectClassContructor[objClass]
+                  const tileset = this.getTilesetFromGid(object_data.gid!)!
+                  const actualX = object_data.x! + object_data.width! * 0.5
+                  const actualY = object_data.y! - object_data.height! * 0.5
+                  const obj = new (getObjClassConstructor())(this.scene, actualX, actualY, tileset.name, object_data.gid! - this.map.getTileset(tileset.name)!.firstgid) as GameObjectBase
+                  // const tD = {...tileData}
+                  obj.setName(object_data.name)
+                  obj.setDepth(0)
+                  obj.setInteractive()
+                  const newData = {
+                    properties: []
+                  } as any
+                  if ((tileData?.properties || originalObj?.properties || []).length > 0) {
+                    try {
+                      newData.properties = [...(tileData?.properties || originalObj?.properties).map((m: any) => ({name: m.name, value: m.value, type: m.type}))]
+                    } catch (error) {
+                    }
+                    // console.log('Ada properties default', objClass, tileData)
+                    if (object_data.properties) {
+                      // console.log('Ada properties custom', objClass, object_data)
+                      object_data.properties.forEach((p: any) => {
+                        try {
+                          const findIndex = newData.properties.findIndex((m: any) => m.name === p.name && m.type === p.type)
+                          if (findIndex >= 0) {
+                            newData.properties[findIndex].value = p.value
+                          } else {
+                            newData.properties.push({name: p.name, value: p.value, type: p.type})
+                          }
+                        } catch (error) {
+                          console.error(`ada p error ${error}`, error)
+                        }
+                      })
+                    }
+                    // console.log('obj', objClass, object_data.name, { t: tileData?.properties, o: originalObj?.properties, od: object_data.properties, n : newData.properties })
+                    // console.log('ada properties akhir', objClass, newData)
+                    obj.setObjectData(newData, this)
+                  } else {
+                    obj.setObjectData({...newData}, this)
+                  }
+                  // if (objClass === 'Door') console.log('Door', tD, object_data)
+                  // if (tD.properties && tD.properties.length > 0 && object_data.properties && object_data.properties?.length > 0) {
+                  //   const newTd = {...tD}
+                  //   object_data.properties?.forEach((p: any) => {
+                  //     const f = newTd.properties.find((fp: any) => fp.name === p.name)
+                  //     if (f) {
+                  //       f.value = p.value
+                  //     } else {
+                  //       newTd.properties.push(p)
+                  //     }
+                  //   })
+                  //   obj.setObjectData({...newTd}, this)
+                  //   console.log('door ada', tD, object_data)
+                  // } else {
+                  //   obj.setObjectData({...tD}, this)
+                  // }
 
-          } catch (error) {}
+                  console.log('[Tilemap] [create] [object_layer] [object]', object_data.name, objClass, newData, obj)
+                  this.scene.add.existing(obj)
+                  this.gameobjects.push(obj)
+                  // if (tD.properties && tD.properties.length > 0) {
+                  //   object_data.properties?.forEach((p: any) => {
+                  //     const f = tD.properties.find((fp: any) => fp.name === p.name)
+                  //     if (f) {
+                  //       f.value = p.value
+                  //     } else {
+                  //       tD.properties.push(p)
+                  //     }
+                  //   })
+                  // }
+
+
+
+                  // const findObjGroup = this.gameobjects_groups.find(g => g.name === objClass)
+                  // if (findObjGroup) {
+                  //   const obj = this.addObjectFromTiled(
+                  //     findObjGroup,
+                  //     object_data,
+                  //     object_data.name,
+                  //     {...tileData},
+                  //   )
+                  //   if (obj) this.gameobjects.push(obj)
+                  // } else {
+                  //   const classMappingConstructor = {
+                  //     'Door': Door,
+                  //     'Chest': Chest
+                  //   }
+                  //   const getObjClassConstructor = () => classMappingConstructor[objClass]
+                  //   const group = this.scene.physics.add.staticGroup({ classType: getObjClassConstructor(), name: objClass })
+                  //   this.gameobjects_groups.push(group)
+                  //   const obj = this.addObjectFromTiled(
+                  //     group,
+                  //     object_data,
+                  //     object_data.name,
+                  //     {...tileData},
+                  //   )
+                  //   if (obj) this.gameobjects.push(obj)
+                  // }
+                }
+              }
+
+            } catch (error) {}
+          }
+        } catch (error) {
+
         }
         // console.log(this.gameobjects_groups)
 
@@ -311,8 +308,17 @@ export class Tilemap {
   }
 
   destroy() {
-    this.gameobjects.forEach((obj) => obj?.destroy.bind(obj)(true))
-    this.map.destroy()
+    this.gameobjects.forEach((obj) => {
+      try {
+        obj?.destroy.bind(obj)(true)
+      } catch (error) {
+      }
+    })
+    try {
+      this.map.destroy()
+    } catch (error) {
+
+    }
   }
 
   preUpdate(time: number, delta: number) {

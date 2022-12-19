@@ -122,12 +122,18 @@ export class Enemy extends GameObjectBase {
           duration: 1000,
           ease: 'Linear',
           onComplete: () => {
-            // handle fireball hit player
-            if (player.getBounds().contains(fireball.x, fireball.y)) {
-              player.makeGameover()
-            }
             fireball.destroy()
+            this.shootsObjs = this.shootsObjs.filter(shoot => shoot !== fireball)
           },
+          onUpdate: (tw) => {
+            // check hit player
+            if (fireball.getBounds().contains(player.x, player.y)) {
+              tw.stop()
+              player.makeGameover()
+              fireball.destroy()
+              this.shootsObjs = this.shootsObjs.filter(shoot => shoot !== fireball)
+            }
+          }
         })
 
         this.shootsObjs.push(fireball)
@@ -136,6 +142,17 @@ export class Enemy extends GameObjectBase {
       if (Date.now() - this.lastAttackTime > this.options.fireOfRate) {
         shoot()
       }
+    }
+  }
+
+  destroy(fromScene?: boolean | undefined): void {
+    super.destroy(fromScene)
+    try {
+      this.enemyBody?.destroy(true)
+      this.circleRadiusAttack?.destroy(true)
+      this.shootsObjs?.forEach(shoot => shoot.destroy(true))
+    } catch (error) {
+
     }
   }
 }

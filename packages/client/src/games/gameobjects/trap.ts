@@ -6,6 +6,7 @@ export class Trap extends GameObjectBase {
   frames: number[] = []
   delay: number = 1000
   enableDepthSort = false
+  isDestroyed: boolean = false
 
   constructor(scene: Phaser.Scene, x: number, y: number, texture: string, frame?: string | number) {
     super(scene, x, y, texture, frame)
@@ -43,6 +44,7 @@ export class Trap extends GameObjectBase {
   }
 
   runInterval() {
+    if (this.isDestroyed) return
     if (this.state === 'closed') {
       this.once('animationcomplete', () => {
         this.state = 'open'
@@ -55,11 +57,19 @@ export class Trap extends GameObjectBase {
       this.anims.play('trap-closed')
     }
     setTimeout(() => {
-      this.runInterval()
+      try {
+        this.runInterval()
+      } catch (error) {
+      }
     }, this.delay)
   }
 
   isClosed() {
     return this.state === 'closed'
+  }
+
+  destroy(fromScene?: boolean | undefined): void {
+    super.destroy(fromScene)
+    this.isDestroyed = true
   }
 }

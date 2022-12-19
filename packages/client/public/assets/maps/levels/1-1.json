@@ -150,7 +150,7 @@
                         {
                          "name":"state",
                          "type":"string",
-                         "value":"open"
+                         "value":"closed"
                         }],
                  "rotation":0,
                  "visible":true,
@@ -168,7 +168,7 @@
                         {
                          "name":"state",
                          "type":"string",
-                         "value":"open"
+                         "value":"closed"
                         }],
                  "rotation":0,
                  "visible":true,
@@ -347,6 +347,40 @@
                  "width":16,
                  "x":103.719696969696,
                  "y":144.05303030303
+                }, 
+                {
+                 "class":"Enemy",
+                 "height":16,
+                 "id":45,
+                 "name":"spawner_enemy_mages",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"Mage"
+                        }],
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":400,
+                 "y":191.5
+                }, 
+                {
+                 "class":"Enemy",
+                 "height":16,
+                 "id":46,
+                 "name":"spawner_enemy_mages",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"Mage"
+                        }],
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":596,
+                 "y":156
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -709,7 +743,7 @@
          "y":0
         }],
  "nextlayerid":15,
- "nextobjectid":45,
+ "nextobjectid":47,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.2",
