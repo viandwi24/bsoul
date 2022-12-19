@@ -51,10 +51,12 @@ export class Trap extends GameObjectBase {
       })
       this.anims.play('trap-open')
     } else {
-      this.once('animationcomplete', () => {
-        this.state = 'closed'
-      })
+      // this.once('animationcomplete', () => {
+      // })
       this.anims.play('trap-closed')
+      setTimeout(() => {
+        this.state = 'closed'
+      }, 150)
     }
     setTimeout(() => {
       try {
