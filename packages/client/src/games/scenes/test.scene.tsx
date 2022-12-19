@@ -78,6 +78,11 @@ export class TestScene extends Phaser.Scene {
       this.game.gameClient.assetUrl('chars/chars.png'),
       this.game.gameClient.assetUrl('chars/chars.json')
     )
+    this.load.atlas(
+      'enemies',
+      this.game.gameClient.assetUrl('chars/enemies.png'),
+      this.game.gameClient.assetUrl('chars/enemies.json')
+    )
 
     // load particles
     this.load.atlas(

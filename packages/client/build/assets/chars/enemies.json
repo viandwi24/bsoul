@@ -1,0 +1,104 @@
+{
+	"textures": [
+		{
+			"image": "enemies.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 18,
+				"h": 96
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "mage/walk/02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 9,
+						"w": 16,
+						"h": 23
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 16,
+						"h": 23
+					}
+				},
+				{
+					"filename": "mage/idle/01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 16,
+						"h": 22
+					},
+					"frame": {
+						"x": 1,
+						"y": 26,
+						"w": 16,
+						"h": 22
+					}
+				},
+				{
+					"filename": "mage/walk/01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 16,
+						"h": 22
+					},
+					"frame": {
+						"x": 1,
+						"y": 50,
+						"w": 16,
+						"h": 22
+					}
+				},
+				{
+					"filename": "mage/idle/02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 16,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 1,
+						"y": 74,
+						"w": 16,
+						"h": 21
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:71a5ece86d1bac93fc5fe0b16dba7cb8:ddfbf5751be13c9cb1c314f00b333c30:9b2a76c8b2a408b3f0547a4eddda1e06$"
+	}
+}

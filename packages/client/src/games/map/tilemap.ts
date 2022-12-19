@@ -149,30 +149,32 @@ export class Tilemap {
 
       // const group = this.scene.physics.add.staticGroup({ classType: Door })
       for (const object_data of layer.objects) {
-        // console.log((object_data as any).class)
-        let bestT = map.tilesets[0]
+        let bestT: Phaser.Tilemaps.Tileset | undefined
         map.tilesets.forEach(t => {
           if (t.firstgid <= (object_data.gid || 0)) {
             bestT = t
           }
         })
+        const tilesData = this.data.tilesets.find((t: any) => t.name === bestT?.name)?.tiles || []
+        const id = (object_data.gid || 0) - (bestT?.firstgid || 0)
+        const tileData = tilesData.find((t: any) => t.id === id)
         // let objectData: any
-        if (bestT) {
+        const originalLayer = (this.data.layers.find((l: any) => l.name === layer.name) || {})
+        const originalObj = (originalLayer?.objects || []).find((o: any) => o.id === object_data.id && o.name === object_data.name)
+        if ((bestT && typeof bestT !== 'undefined') || object_data) {
           try {
             // console.log(this.data.tilesets)
             // objectData = bestT.tileData[(object_data.gid || 0) - bestT.firstgid]
             // objectData = [this.data.tilesets || []]
             //   .find(t => t.name === bestT.name)?.tiles
-            const tilesData = this.data.tilesets.find((t: any) => t.name === bestT.name)?.tiles || []
-            const id = (object_data.gid || 0) - bestT.firstgid
-            const tileData = tilesData.find((t: any) => t.id === id)
             // console.log(bestT, tilesData, tileData)
             // console.log(objectData, object_data)
 
-            if (tileData) {
-              const objClass = tileData.class
+            if (tileData || originalObj) {
+              const objClass = tileData?.class || originalObj?.class || ''
+              console.log('tiledata', tileData)
               if (objClass) {
-                console.log('[Tilemap] [create] [object_layer] [object]', object_data.name, objClass)
+                console.log('[Tilemap] [create] [object_layer] [object]', object_data.name, objClass, object_data)
                 const getObjClassConstructor = () => GameObjectClassContructor[objClass]
                 const tileset = this.getTilesetFromGid(object_data.gid!)!
                 const actualX = object_data.x! + object_data.width! * 0.5
@@ -185,20 +187,28 @@ export class Tilemap {
                 const newData = {
                   properties: []
                 } as any
-                if (tileData.properties) {
-                  newData.properties = [...tileData.properties.map((m: any) => ({name: m.name, value: m.value, type: m.type}))]
+                if ((tileData?.properties || originalObj?.properties || []).length > 0) {
+                  try {
+                    newData.properties = [...(tileData?.properties && originalObj?.properties).map((m: any) => ({name: m.name, value: m.value, type: m.type}))]
+                  } catch (error) {
+                  }
                   // console.log('Ada properties default', objClass, tileData)
                   if (object_data.properties) {
                     // console.log('Ada properties custom', objClass, object_data)
                     object_data.properties.forEach((p: any) => {
                       try {
                         const findIndex = newData.properties.findIndex((m: any) => m.name === p.name && m.type === p.type)
-                        if (findIndex >= 0) newData.properties[findIndex].value = p.value
+                        if (findIndex >= 0) {
+                          newData.properties[findIndex].value = p.value
+                        } else {
+                          newData.properties.push({name: p.name, value: p.value, type: p.type})
+                        }
                       } catch (error) {
                         console.error(`ada p error ${error}`, error)
                       }
                     })
                   }
+                  if (objClass === 'Enemy') console.log('Enemy nyar', newData, object_data.properties)
                   // console.log('ada properties akhir', objClass, newData)
                   obj.setObjectData(newData, this)
                 } else {
